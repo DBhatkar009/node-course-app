@@ -12,7 +12,7 @@ const app = express();
 //...node js middleware method.
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(adminRouter);
+app.use('/admin', adminRouter);
 app.use(shopRouter);
 
 //Unkown path status code Page not found
