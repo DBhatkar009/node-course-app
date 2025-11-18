@@ -5,6 +5,7 @@ const express = require('express'); // installing express. npm install --save ex
 const bodyParser = require('body-parser');// npm install --save body-parser
 const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
+const path = require('path');
 // const { buffer } = require('stream/consumers');
 
 const app = express();
@@ -17,7 +18,7 @@ app.use(shopRouter);
 
 //Unkown path status code Page not found
 app.use((req, res, next)=>{
-   res.status(404).send('<h1> Page Not Found </h1>');
+   res.status(404).sendFile(path.join(__dirname, 'view', 'Error404.html'));
 })
 
 
