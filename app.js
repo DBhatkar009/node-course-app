@@ -1,6 +1,6 @@
 //Working on Node.js Server Creating New Node Server
 // npm init  ...for node packages
-const routes = require('./routes'); // installing nodemon. npm install --save nodemon
+// const routes = require('./routes'); // installing nodemon. npm install --save nodemon
 const express = require('express'); // installing express. npm install --save express
 const bodyParser = require('body-parser');// npm install --save body-parser
 const adminRouter = require('./routes/admin');
