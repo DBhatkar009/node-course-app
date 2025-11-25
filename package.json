@@ -1,0 +1,29 @@
+{
+  "name": "first-app",
+  "version": "1.0.0",
+  "description": "Complete node.js course",
+  "homepage": "https://github.com/DBhatkar009/node-course-app#readme",
+  "bugs": {
+    "url": "https://github.com/DBhatkar009/node-course-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DBhatkar009/node-course-app.git"
+  },
+  "license": "ISC",
+  "author": "Dhananjay Bhatkar",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
