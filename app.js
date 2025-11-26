@@ -7,12 +7,13 @@ const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
 const path = require('path');
 const rootDir = require('./helper/path');
-// const { buffer } = require('stream/consumers');
+const { buffer } = require('stream/consumers');
 
 const app = express();
 
 //...node js middleware method.
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRouter);
 app.use(shopRouter);
