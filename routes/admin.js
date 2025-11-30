@@ -6,7 +6,7 @@ const products = [];
 
 // admin/add-product => GET Method
 router.get('/add-Product', (req, res, next)=>{
-    res.sendFile(path.join(rootDir, 'view', 'add-products.html'));
+    res.render('add-products', {pageTitle: 'Add-Products', path:'/admin/add-product'});
 });
 
 // admin/add-product => POST Method
