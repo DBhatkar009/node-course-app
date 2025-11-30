@@ -23,7 +23,7 @@ app.use(shopRouter);
 
 //Unkown path status code Page not found
 app.use((req, res, next)=>{
-   res.status(404).sendFile(path.join(__dirname, 'view', 'Error404.html'));
+   res.status(404).render('Error404', {pageTitle: 'Page Not Found'});
 })
 
 
