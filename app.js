@@ -1,5 +1,5 @@
 //Working on Node.js Server Creating New Node Server
-// npm init  ...for node packages
+// npm init  ...for node packages always start with this when you created node server
 // const routes = require('./routes'); // installing nodemon. npm install --save nodemon
 const express = require('express'); // installing express. npm install --save express
 const bodyParser = require('body-parser');// npm install --save body-parser
@@ -12,7 +12,7 @@ const { buffer } = require('stream/consumers');
 const app = express();
 
 // npm install --save ejs pug express-handlebars 
-app.set('view engine','pug');
+app.set('view engine', 'pug');
 app.set('views', 'view');
 //...node js middleware method.
 app.use(bodyParser.urlencoded({extended: false}));
