@@ -8,11 +8,13 @@ const shopRouter = require('./routes/shop');
 const path = require('path');
 // const rootDir = require('./helper/path');
 const { buffer } = require('stream/consumers');
+const expressHBS = require('express-handlebars');
 
 const app = express();
 
 // npm install --save ejs pug express-handlebars 
-app.set('view engine', 'pug');
+app.engine('hbs', expressHBS());
+app.set('view engine', 'hbs');
 app.set('views', 'view');
 //...node js middleware method.
 app.use(bodyParser.urlencoded({extended: false}));
