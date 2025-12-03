@@ -8,20 +8,20 @@ const shopRouter = require("./routes/shop");
 const path = require("path");
 // const rootDir = require('./helper/path');
 const { buffer } = require("stream/consumers");
-const expressHBS = require("express-handlebars");
+// const expressHBS = require("express-handlebars");
 
 const app = express();
 
 // npm install --save ejs pug express-handlebars
-app.engine(
-  "hbs",
-  expressHBS({
-    layoutsDir: "view/layouts/",
-    defaultLayout: "main-layout",
-    extname: "hbs",
-  })
-);
-app.set("view engine", "hbs");
+// app.engine(
+//   "hbs",
+//   expressHBS({
+//     layoutsDir: "view/layouts/",
+//     defaultLayout: "main-layout",
+//     extname: "hbs",
+//   })
+// );
+app.set("view engine", "ejs");
 app.set("views", "view");
 //...node js middleware method.
 app.use(bodyParser.urlencoded({ extended: false }));
