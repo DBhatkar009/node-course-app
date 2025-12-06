@@ -6,7 +6,7 @@ const bodyParser = require("body-parser"); // npm install --save body-parser
 const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
 const path = require("path");
-// const rootDir = require('./helper/path');
+const prodcutsController = require("./controller/error404");
 const { buffer } = require("stream/consumers");
 // const expressHBS = require("express-handlebars");
 
@@ -27,12 +27,10 @@ app.set("views", "view");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/admin", adminRouter.routes);
+app.use("/admin", adminRouter);
 app.use(shopRouter);
 
 //Unkown path status code Page not found
-app.use((req, res, next) => {
-  res.status(404).render("Error404", { pageTitle: "Page Not Found" });
-});
+app.use(prodcutsController.getError404);
 
 app.listen(3000);
