@@ -53,11 +53,15 @@
             margin: 1rem 0;
          }
          .form-control lable,
-         .form-control input{
+         .form-control input,
+         .form-control textarea{
             display: block;
+            width: 100%;
+            margin-bottom: 0.5rem;
          }
 
-         .form-control input{
+         .form-control input,
+         .form-control textarea{
               border: 1px solid chocolate;
               font: initial;
               border-radius: 2px;
@@ -70,6 +74,12 @@
             background: rgb(254, 242, 234);
             border-radius: 3px;
             cursor: pointer;
+         }
+
+         .form-control input:focus,
+         .form-control textarea:focus{
+            outline: none;
+            border-color: darkorange;
          }
 
          button:hover,
