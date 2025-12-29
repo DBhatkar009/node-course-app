@@ -10,6 +10,17 @@ exports.getProducts = (req, res, next) => {
   });
 };
 
+// new controller for product details
+exports.getProductDetails = (req, res, next) => {
+  const prodId = req.params.productId;
+  Product.findById(prodId, (product) => {
+    res.render("shop/products-details", { product: product, data: product, pageTitle: product.title,
+    path: "/add-product-list" 
+    });
+  });
+};
+
+// existing controllers
 exports.getIndex = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render("shop/index", {
@@ -20,6 +31,11 @@ exports.getIndex = (req, res, next) => {
   });
 };
 
+/* name: getCart
+   description: controller for cart page
+   arguments: req, res, next
+   author: Dhananjay Bhatkar
+*/
 exports.getCart = (req, res, next) => {
   res.render("shop/cart", {
     path: "/cart",
@@ -27,6 +43,7 @@ exports.getCart = (req, res, next) => {
   });
 };
 
+// controller for orders page
 exports.getOrders = (req, res, next) => {
   res.render("shop/orders", {
     path: "/orders",
@@ -34,6 +51,7 @@ exports.getOrders = (req, res, next) => {
   });
 };
 
+// controller for checkout page
 exports.getCheckout = (req, res, next) => {
   res.render("shop/checkout", {
     path: "/checkout",

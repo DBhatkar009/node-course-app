@@ -1,0 +1,16 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<%- include('../includes/navigation.ejs') %>
+<body>
+
+  <main class="centered">
+     <h1> <%= data.title %> </h1>
+     <hr>
+     <di>
+        <img src="<%= data.imageUrl %>" alt="<%= data.title %>" style="max-width: 300px;">
+     </di>
+     <h2><%= data.price %></h2>
+     <p><%= data.description %></p>
+  </main>
+<%- include('../includes/end.ejs') %>
