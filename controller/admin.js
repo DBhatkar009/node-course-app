@@ -32,6 +32,12 @@ exports.postNewProducts = (req, res, next) => {
   res.redirect("/");
 };
 
+/*
+   name: getEditProducts
+   description: controller for edit-products page
+   arguments: req, res, next
+   author: Dhananjay Bhatkar
+*/
 exports.getEditProducts = (req, res, next) => {
   const editMode = req.query.edit;
   if (!editMode) {
@@ -49,6 +55,10 @@ exports.getEditProducts = (req, res, next) => {
       product: product,
     });
   });
+};
+
+exports.postEditProducts = (req, res, next) => {
+  // to be implemented
 };
 
 /*
