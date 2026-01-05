@@ -12,4 +12,7 @@ router.get("/add-product-list", adminController.getProducts);
 // admin/add-product => POST Method
 router.post("/add-product", adminController.postNewProducts);
 
+// admin/edit-product => GET Method
+router.get("/edit-product/:productId", adminController.getEditProducts);
+
 module.exports = router;

@@ -7,11 +7,12 @@ const Product = require("../models/product");
     author: Dhananjay Bhatkar
 */
 exports.getAddProducts = (req, res, next) => {
-  res.render("admin/add-products", {
+  res.render("admin/edit-products", {
     pageTitle: "Add-Products",
     path: "/admin/add-product",
     activeAddProduct: true,
     productCss: true,
+    editing: false,
   });
 };
 
@@ -29,6 +30,25 @@ exports.postNewProducts = (req, res, next) => {
   const product = new Product(title, imageUrl, description, price);
   product.save();
   res.redirect("/");
+};
+
+exports.getEditProducts = (req, res, next) => {
+  const editMode = req.query.edit;
+  if (!editMode) {
+    return res.redirect("/");
+  }
+  const prodId = req.params.productId;
+  Product.findById(prodId, (product) => {
+    if (!product) {
+      return res.redirect("/");
+    }
+    res.render("admin/edit-products", {
+      pageTitle: "Edit-Products",
+      path: "/admin/edit-product",
+      editing: editMode,
+      product: product,
+    });
+  });
 };
 
 /*
