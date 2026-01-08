@@ -1,11 +1,16 @@
+  * {
+  box-sizing: border-box;
+}
+
   body {
           padding: 0;
           margin: 0;
           font-family: sans-serif;
         }
 
-        main{
+        main {
            padding: 1rem;
+           margin: auto;
         }
          .main-header {
             width: 100%;
